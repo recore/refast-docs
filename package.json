@@ -1,0 +1,26 @@
+{
+  "name": "refast-docs",
+  "version": "1.1.0",
+  "description": "docs for Refast",
+  "main": "index.js",
+  "scripts": {
+    "start": "gitbook serve src docs",
+    "build": "gitbook build src docs",
+    "commit": "git add . --all && git commit -m update && git push origin master",
+    "save": "npm run build && npm run commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recore/refast-docs.git"
+  },
+  "author": {
+    "name": "fengsx",
+    "email": "fengsx@msn.com",
+    "url": "https://github.com/fengsx"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/recore/refast-docs/issues"
+  },
+  "homepage": "https://github.com/recore/refast-docs#readme"
+}
