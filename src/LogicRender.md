@@ -14,7 +14,7 @@ const { workNo } = this.state;
 // 此处调用 action，与直接调用 this.dispatch('update) 效果一致;
 render(){
   return (
-    <LogicRender action={'update'} awareOf={{workNo}}>
+    <LogicRender action={ 'update' } awareOf={{ workNo }}>
     </LogicRender> 
   )
 }
@@ -31,8 +31,9 @@ import { LogicRender } from 'refast';
 // 如果 isLoading 为 true,就展示 loading 状态
 // 如果 isEmpty 为 true，则展示 empty 状态
 render(){
+  const { isLoading, isEmpty } = this.state;
   return (
-    <LogicRender loading={isLoading} empty={isEmpty} >
+    <LogicRender loading={ isLoading } empty={ isEmpty }>
     </LogicRender> 
   )
 }
@@ -53,9 +54,9 @@ const cls = 'your-custom-className';
 render(){
   return (
     <LogicRender
-      className={cls}
-      Empty={Empty}
-      Loading={Loading}
+      className={ cls }
+      Empty={ Empty }
+      Loading={ Loading }
     />
   )
 }
@@ -73,7 +74,7 @@ const Empty = (props) => (
 
 render(){
   return (
-    <LogicRender empty={isEmpty} msg={'No Data'} Empty={Empty}>
+    <LogicRender empty={ this.state.isEmpty } msg={ 'No Data' } Empty={ Empty }>
     </LogicRender>
   )
 }

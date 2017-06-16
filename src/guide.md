@@ -114,6 +114,7 @@ import { LogicRender } from 'refast';
 // 如果 isLoading 为 true,就展示 loading 状态
 // 如果 isEmpty 为 true，则展示 empty 状态
 render() {
+  const { isLoading, isEmpty } = this.state;
   return (
     <LogicRender loading={ isLoading } empty={ isEmpty }>
     </LogicRender> 
