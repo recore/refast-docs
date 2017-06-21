@@ -1,6 +1,6 @@
 # Refast
 
-_简单、易上手的组件状态管理_
+_5分钟就能学会的 React 组件状态管理工具_
 
 [![npm version](https://img.shields.io/npm/v/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![download](https://img.shields.io/npm/dm/refast.svg?style=flat)](https://www.npmjs.com/package/refast) 
 
