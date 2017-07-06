@@ -2,6 +2,22 @@
 
 LogicRender 是一个可以嵌套使用的逻辑组件，提供以下功能：
 
+#### 条件渲染
+
+可以给 LogicRender 设置一个名为 show 的 props。 当它不为真时，LogicRender 就不会渲染其子组件。
+
+```javascript
+import { render } from 'react-dom';
+
+render(){
+  return (
+    <LogicRender show={ this.state.show }>
+    </LogicRender> 
+  )
+}
+```
+
+
 #### 执行 Action
 
 可以给 LogicRender 指定一个 Action，初始化时执行一次。如果设置了 awareOf，在当组件更新时，一旦 awareOf 发生变化，就会再次执行 Action。
@@ -22,7 +38,7 @@ render(){
 
 #### 通用 UI 的封装
 
-LogicRender 将常用的 Empty/Loadig UI 状态封装了起来。
+LogicRender 封装了常用的 Empty/Loadig 等 UI 状态。
 
 ```jsx
 import { render } from 'react-dom';
@@ -84,7 +100,7 @@ render(){
 
 #### 修改默认的 UI
 
-如果要修改 LogicRender 的默认展示方式，可以像下面的例子这样直接修改 LogicRender.defaultProps。
+如果要统一修改 LogicRender 的默认展示方式，可以像下面的例子这样直接修改 LogicRender.defaultProps。
 
 ```javascript
 Object.assign(LogicRender.defaultProps, {

@@ -265,6 +265,17 @@
                                 
                                 <h1 id="logicrender">LogicRender</h1>
 <p>LogicRender &#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x4F7F;&#x7528;&#x7684;&#x903B;&#x8F91;&#x7EC4;&#x4EF6;&#xFF0C;&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x529F;&#x80FD;&#xFF1A;</p>
+<h4 id="&#x6761;&#x4EF6;&#x6E32;&#x67D3;">&#x6761;&#x4EF6;&#x6E32;&#x67D3;</h4>
+<p>&#x53EF;&#x4EE5;&#x7ED9; LogicRender &#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; show &#x7684; props&#x3002; &#x5F53;&#x5B83;&#x4E0D;&#x4E3A;&#x771F;&#x65F6;&#xFF0C;LogicRender &#x5C31;&#x4E0D;&#x4F1A;&#x6E32;&#x67D3;&#x5176;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>;
+
+render(){
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LogicRender</span> <span class="hljs-attr">show</span>=<span class="hljs-string">{</span> <span class="hljs-attr">this.state.show</span> }&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">LogicRender</span>&gt;</span></span> 
+  )
+}
+</code></pre>
 <h4 id="&#x6267;&#x884C;-action">&#x6267;&#x884C; Action</h4>
 <p>&#x53EF;&#x4EE5;&#x7ED9; LogicRender &#x6307;&#x5B9A;&#x4E00;&#x4E2A; Action&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86; awareOf&#xFF0C;&#x5728;&#x5F53;&#x7EC4;&#x4EF6;&#x66F4;&#x65B0;&#x65F6;&#xFF0C;&#x4E00;&#x65E6; awareOf &#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5C31;&#x4F1A;&#x518D;&#x6B21;&#x6267;&#x884C; Action&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>;
@@ -280,7 +291,7 @@ render(){
 }
 </code></pre>
 <h4 id="&#x901A;&#x7528;-ui-&#x7684;&#x5C01;&#x88C5;">&#x901A;&#x7528; UI &#x7684;&#x5C01;&#x88C5;</h4>
-<p>LogicRender &#x5C06;&#x5E38;&#x7528;&#x7684; Empty/Loadig UI &#x72B6;&#x6001;&#x5C01;&#x88C5;&#x4E86;&#x8D77;&#x6765;&#x3002;</p>
+<p>LogicRender &#x5C01;&#x88C5;&#x4E86;&#x5E38;&#x7528;&#x7684; Empty/Loadig &#x7B49; UI &#x72B6;&#x6001;&#x3002;</p>
 <pre><code class="lang-jsx"><span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>;
 <span class="hljs-keyword">import</span> { LogicRender } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;refast&apos;</span>;
 
@@ -332,7 +343,7 @@ render(){
 </code></pre>
 <p>&#x5F53; isEmpty &#x4E3A; true &#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x5C55;&#x793A; No Data&#x3002;</p>
 <h4 id="&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x7684;-ui">&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x7684; UI</h4>
-<p>&#x5982;&#x679C;&#x8981;&#x4FEE;&#x6539; LogicRender &#x7684;&#x9ED8;&#x8BA4;&#x5C55;&#x793A;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x8FD9;&#x6837;&#x76F4;&#x63A5;&#x4FEE;&#x6539; LogicRender.defaultProps&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x7EDF;&#x4E00;&#x4FEE;&#x6539; LogicRender &#x7684;&#x9ED8;&#x8BA4;&#x5C55;&#x793A;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x8FD9;&#x6837;&#x76F4;&#x63A5;&#x4FEE;&#x6539; LogicRender.defaultProps&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-built_in">Object</span>.assign(LogicRender.defaultProps, {
   Empty: Empty,
   Loading: Loading,
@@ -382,7 +393,7 @@ render(){
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LogicRender","level":"1.2.2","depth":2,"next":{"title":"Middleware","level":"1.2.3","depth":2,"path":"Middleware.md","ref":"Middleware.md","articles":[]},"previous":{"title":"Logic","level":"1.2.1","depth":2,"path":"Logic.md","ref":"Logic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LogicRender.md","mtime":"2017-06-16T01:49:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-21T09:59:28.265Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LogicRender","level":"1.2.2","depth":2,"next":{"title":"Middleware","level":"1.2.3","depth":2,"path":"Middleware.md","ref":"Middleware.md","articles":[]},"previous":{"title":"Logic","level":"1.2.1","depth":2,"path":"Logic.md","ref":"Logic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LogicRender.md","mtime":"2017-07-06T09:42:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-06T09:48:44.498Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,6 +1,8 @@
 # Refast
 
 _5分钟就能学会的 React 组件状态管理工具_
+<img src="https://user-images.githubusercontent.com/7709602/27905492-afbe494e-6272-11e7-9ca2-7ecea4bd4c0b.jpg" alt="refast logo" height="120" align="right" />
+
 
 [![npm version](https://img.shields.io/npm/v/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![download](https://img.shields.io/npm/dm/refast.svg?style=flat)](https://www.npmjs.com/package/refast) 
 
@@ -56,7 +58,7 @@ Refast 对 React.Component 进行了一层封装。为其增加了 dispatch 等�
 更多内容可以看[这里](guide.md)。
 
 ##### LogicRender
-除了完成一般的 React 组件的状态管理，为了提高开发效率，Refast 还提供了一个称之为 LogicRender 的组件。它将 Loading/Empty 等常用的 UI 状态封装了起来，可以根据用户的的需要显示加载中和空数据状态。LogicRender 还可以根据条件，执行用户指定的 Action。
+除了完成一般的 React 组件的状态管理，为了提高开发效率，Refast 还提供了一个称之为 LogicRender 的组件。它支持条件渲染，封装了 Loading/Empty 等常用的 UI 状态，还可以根据条件自己决定是否执行指定的 Action。
 
 
 更多内容可以看[这里](LogicRender.md)。
@@ -65,7 +67,7 @@ Refast 对 React.Component 进行了一层封装。为其增加了 dispatch 等�
 
 - 概念少，学习成本较低。
 - 异步操作更加流畅，官方推荐的 [async-await](https://github.com/tc39/proposals/blob/master/finished-proposals.md)，已经在 Chrome v55 和 Firefox 52.0 提供支持
-- LogicRender 集成了通用视图处理逻辑，提升通用场景的开发效率
+- LogicRender 支持条件渲染，集成了通用视图处理逻辑，提升通用场景的开发效率
 - LogicRender 可条件执行 Action，减少部分逻辑处理
 
 ## 示例
