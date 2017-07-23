@@ -117,6 +117,29 @@ export default {
 }
 ```
 
+### 执行 Action 后的回调处理
+
+从 1.2.0 开始， dispatch 方法将返回一个 Promise 的实例，以方便用户做进一步的操作。
+
+比如，现在有一个表单查询的方法 handleSearch，需要执行一个称为  remoteSearch 的异步 Action，并在查询之后调用 afterSearch 做进一步的处理。在 1.2.0 之前，我们只能将 afterSearch 参数，在 disptach 时传入： 
+
+```javascript
+  handleSearch(someParams) {
+    this.dispatch('remoteSearch', someParams, this.afterSearch);
+  }
+```
+
+从 1.2.0 开始，Refast 开始支持如下的写法：
+
+```javascript
+ async handleSearch(someParams) {
+  // dispatch 的结果会返回
+  // 如果 dispatch 的是一个数组，则会返回最后一个的执行结果
+  const result = await this.dispatch('remoteSearch', someParams);
+  this.afterSearch(result);
+ }
+```
+
 #### 扩展ctx
 
 通过 Refast 提供的 use 可以很轻松地扩展 ctx。
@@ -154,3 +177,4 @@ export default {
 }
 ```
 在 1.1.0 之前，use 方法有个别名 setup，用法与 use 完全相同。后续版本推荐使用 use。
+
