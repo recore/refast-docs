@@ -117,7 +117,7 @@ export default {
 }
 ```
 
-### 执行 Action 后的回调处理
+#### 执行 Action 后的回调处理
 
 从 1.2.0 开始， dispatch 方法将返回一个 Promise 的实例，以方便用户做进一步的操作。
 
