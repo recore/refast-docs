@@ -25,14 +25,12 @@ export function update(context, someState) {
 }
 
 // 异步请求后修改组件状态
-export async function init(context, params){
-  // 这里以 jQuery 的 $.ajax 来示例异步请求
-  // 建议不要在生产环境中使用 jQuery
-  const asyncState = await $.ajax(params);
+export async function init(context, ...params){
+  const asyncState = await window.fetch.apply(null, params);
   context.setState(asyncState);
 }
-
 ```
+
 Action 函数有一个共同特点，他们的第一个参数都是 context。context 封装了一个修改组件状态的方法 setState。 `context.setState` 与 React 组件的 setState 用法完全一样。
 
 更多内容可以看[这里](Logic.md)。
