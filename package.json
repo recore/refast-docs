@@ -7,7 +7,8 @@
     "start": "gitbook serve src docs",
     "build": "gitbook build src docs",
     "commit": "git add . --all && git commit -m update && git push origin master",
-    "save": "npm run build && npm run commit"
+    "fixicon": "cp -R ./src/images/ ./docs/gitbook/images/",
+    "save": "npm run build && npm run fixicon && npm run commit"
   },
   "repository": {
     "type": "git",
