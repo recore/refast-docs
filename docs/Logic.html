@@ -380,11 +380,14 @@
 <span class="hljs-keyword">import</span> { Message } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;your-custom-message&apos;</span>;
 <span class="hljs-keyword">import</span> { Dialog } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;your-custom-dialog&apos;</span>;
 <span class="hljs-keyword">import</span> { DB } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;your-custom-ajax-handler&apos;</span>;
+<span class="hljs-keyword">import</span> tools <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;your-custom-tools&apos;</span>;
 
 <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x901A;&#x8FC7; use &#x81EA;&#x5B9A;&#x4E49;</span>
 Refast.use(<span class="hljs-string">&apos;fn&apos;</span>, {
   message: Message,
-  dialog: Dialog
+  dialog: Dialog,
+  DB,
+  tools,
 })
 </code></pre>
 <p>&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5728; Action &#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;</p>
@@ -444,7 +447,7 @@ Refast.use(<span class="hljs-string">&apos;fn&apos;</span>, {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Logic","level":"1.2.1","depth":2,"next":{"title":"LogicRender","level":"1.2.2","depth":2,"path":"LogicRender.md","ref":"LogicRender.md","articles":[]},"previous":{"title":"API 概览","level":"1.2","depth":1,"ref":"","articles":[{"title":"Logic","level":"1.2.1","depth":2,"path":"Logic.md","ref":"Logic.md","articles":[]},{"title":"LogicRender","level":"1.2.2","depth":2,"path":"LogicRender.md","ref":"LogicRender.md","articles":[]},{"title":"Middleware","level":"1.2.3","depth":2,"path":"Middleware.md","ref":"Middleware.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Logic.md","mtime":"2017-07-24T03:42:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-24T03:42:35.041Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Logic","level":"1.2.1","depth":2,"next":{"title":"LogicRender","level":"1.2.2","depth":2,"path":"LogicRender.md","ref":"LogicRender.md","articles":[]},"previous":{"title":"API 概览","level":"1.2","depth":1,"ref":"","articles":[{"title":"Logic","level":"1.2.1","depth":2,"path":"Logic.md","ref":"Logic.md","articles":[]},{"title":"LogicRender","level":"1.2.2","depth":2,"path":"LogicRender.md","ref":"LogicRender.md","articles":[]},{"title":"Middleware","level":"1.2.3","depth":2,"path":"Middleware.md","ref":"Middleware.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Logic.md","mtime":"2017-07-30T09:10:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-30T09:11:01.834Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -149,11 +149,14 @@ import Refast from 'Refast ';
 import { Message } from 'your-custom-message';
 import { Dialog } from 'your-custom-dialog';
 import { DB } from 'your-custom-ajax-handler';
+import tools from 'your-custom-tools';
 
 // 可以通过 use 自定义
 Refast.use('fn', {
   message: Message,
-  dialog: Dialog
+  dialog: Dialog,
+  DB,
+  tools,
 })
 ```
 
