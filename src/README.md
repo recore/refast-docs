@@ -1,10 +1,10 @@
 # Refast
 
-_5分钟就能学会的 React 组件状态管理工具_
-<img src="https://user-images.githubusercontent.com/7709602/27905492-afbe494e-6272-11e7-9ca2-7ecea4bd4c0b.jpg" alt="refast logo" height="120" align="right" />
+<a href="https://github.com/recore/refast" align="center"><img src="https://user-images.githubusercontent.com/7709602/27905492-afbe494e-6272-11e7-9ca2-7ecea4bd4c0b.jpg" alt="refast logo" height="120" align="right" /></a>
 
+_[![DingTalk](https://img.alicdn.com/tps/TB1Wk4nOXXXXXXTaXXXXXXXXXXX-13-16.png)](dingtalk://dingtalkclient/action/sendmsg?dingtalk_id=alidou)5分钟就能学会的 React 组件状态管理工具_
 
-[![npm version](https://img.shields.io/npm/v/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![download](https://img.shields.io/npm/dm/refast.svg?style=flat)](https://www.npmjs.com/package/refast) 
+[![npm version](https://img.shields.io/npm/v/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![download](https://img.shields.io/npm/dm/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/recore/refast) 
 
 ![npm install refast](https://nodei.co/npm/refast.png?downloadRank=true&downloads=true)
 
@@ -81,4 +81,4 @@ Refast 对 React.Component 进行了一层封装。为其增加了 dispatch 等�
 
 ## 示例
 
-具体示例在这里 [https://github.com/recore/refast-demo](https://github.com/recore/refast-demo)。线上可以直接看 [http://demo.refast.cn](http://demo.refast.cn)
+具体示例在这里 [https://github.com/recore/refast-demo](https://github.com/recore/refast-demo)。线上效果可以看 [http://demo.refast.cn](http://demo.refast.cn)
