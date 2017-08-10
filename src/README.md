@@ -23,7 +23,7 @@ https://unpkg.com/refast/dist/index.js
 https://unpkg.com/refast@[version]/dist/index.js
 
 ## 设计思路
-#### 设计图
+
 ![Refast架构图](https://user-images.githubusercontent.com/7709602/27064069-df2fccb4-5027-11e7-967c-90791a1422c2.png)
 
 #### 几个概念
