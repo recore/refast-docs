@@ -8,11 +8,22 @@ _5分钟就能学会的 React 组件状态管理工具_
 
 ![npm install refast](https://nodei.co/npm/refast.png?downloadRank=true&downloads=true)
 
-* 安装: `npm install refast --save`。
-* CDN: https://unpkg.com/refast/dist/index.js
+## 安装使用
+#### 通过 npm 安装
+Refast 可以通过 npm 安装到项目中： 
+`npm install refast --save`
+
+#### 通过 CDN 引用
+
+Refast 可以通过 CDN 引入到项目中。
+* 每次均引入最新版本：
+https://unpkg.com/refast/dist/index.js
+
+* 引入指定版本。用版本号替换 `[version]` 部分的内容即可：
+https://unpkg.com/refast@[version]/dist/index.js
 
 ## 设计思路
-#### 架构图
+#### 设计图
 ![Refast架构图](https://user-images.githubusercontent.com/7709602/27064069-df2fccb4-5027-11e7-967c-90791a1422c2.png)
 
 #### 几个概念
@@ -70,4 +81,4 @@ Refast 对 React.Component 进行了一层封装。为其增加了 dispatch 等�
 
 ## 示例
 
-具体示例在这里 [https://github.com/recore/refast-demo](https://github.com/recore/refast-demo)
+具体示例在这里 [https://github.com/recore/refast-demo](https://github.com/recore/refast-demo)。线上可以直接看 [http://demo.refast.cn](http://demo.refast.cn)

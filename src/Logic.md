@@ -40,8 +40,6 @@ export default {
 - `ctx.getState` 获取组件当前的 state
 - `ctx.getProps` 获取组件当前的 props
 
-在 1.1.0 之前，dispatch 方法有个别名 execute，用法与 dispatch 完全相同。后续版本推荐使用 dispatch。
-
 #### 执行多个方法
 
 Refast 支持一次 dispatch 多个 Action。它们继发执行，上一个的执行结果，将作为参数传入下一个方法。如果上一个 Action 的执行结果为 false, 则终止执行后续的 Action。
@@ -116,6 +114,27 @@ export default {
   }
 }
 ```
+#### Action 的互相调用
+
+Action 独立的可以修改 state 的功能片段，是支持互相调用的。假定，我们现在有两个 ActionA、ActionB。ActionB 需要调用 ActionA：
+```javascript
+// logic.js
+export function ActionA(ctx){
+  ActionB(ctx, someParams)
+}
+
+export function ActionB(ctx, someParams){
+}
+
+// Page
+import * as logic from './logic';
+
+export default class A extends Component {
+ construcotr(props) {
+   super(props, logic);
+ }
+}
+```
 
 #### 执行 Action 后的回调处理
 
@@ -179,5 +198,4 @@ export default {
   },
 }
 ```
-在 1.1.0 之前，use 方法有个别名 setup，用法与 use 完全相同。后续版本推荐使用 use。
 
