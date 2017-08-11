@@ -266,6 +266,39 @@
 <p>&#x4ECE; 1.1.0 &#x5F00;&#x59CB;&#xFF0C;setup &#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x522B;&#x540D; use&#xFF0C;execute &#x589E;&#x52A0;&#x4E86;&#x522B;&#x540D; dispatch&#x3002;&#x7528;&#x6CD5;&#x548C;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x589E;&#x52A0;&#x522B;&#x540D;&#xFF0C;&#x662F;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x6709; Reflux &#x7ECF;&#x9A8C; &#x548C; Redux &#x7ECF;&#x9A8C;&#x7684;&#x540C;&#x5B66;&#x80FD;&#x591F;&#x5FEB;&#x901F;&#x4F7F;&#x7528; Refast&#x3002;</p>
 <h4 id="2&#x3001;action-&#x7684;&#x4E92;&#x76F8;&#x8C03;&#x7528;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;">2&#x3001;Action &#x7684;&#x4E92;&#x76F8;&#x8C03;&#x7528;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;</h4>
 <p>&#x8BE6;&#x89C1; <a href="Logic.html">Logic</a> &#x76F8;&#x5173;&#x90E8;&#x5206;&#x3002;</p>
+<h4 id="3&#x3001;ie910-&#x4E0B;-logicrender-&#x62A5;&#x9519;-childcontexttypes-must-be-defined-in-order-to-use-getchildcontext">3&#x3001;IE9/10 &#x4E0B; LogicRender &#x62A5;&#x9519; <code>childContextTypes must be defined in order to use getChildContext</code></h4>
+<p><code>LogicRender</code> &#x4F7F;&#x7528;&#x4E86; React &#x7684; context &#x7279;&#x6027;&#x6765;&#x5B9E;&#x73B0; <code>Action</code> &#x8C03;&#x7528;&#x7684;&#x3002; &#x56E0;&#x6B64;&#x7EE7;&#x627F; Refast.Component &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x80FD;&#x591F;&#x7EE7;&#x627F;&#x5176; childContextTypes&#x3002;&#x800C;&#x5728;&#x8FD9;&#x4E00;&#x70B9;&#x4E0A;&#xFF0C;Babel &#x8F6C;&#x6362;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x7EE7;&#x627F;&#x6240;&#x9700;&#x8981;&#x7684;<code>__proto__</code>   IE 9/10 &#x4E0D;&#x652F;&#x6301;&#x3002;&#x5BFC;&#x81F4;&#x5728; IE9/10 &#x4E0B;&#x62A5;&#x9519;&#xFF1A;</p>
+<p><img src="https://user-images.githubusercontent.com/7709602/27169337-05eace2a-51dc-11e7-849f-94719d835a34.jpg" alt="logicrender-ie9"></p>
+<p>&#x89E3;&#x51B3;&#x7684;&#x529E;&#x6CD5;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x9700;&#x8981;&#x4F60;&#x5F00;&#x542F; es2015 &#x7684; loose &#x6A21;&#x5F0F;&#xFF0C;&#x540C;&#x65F6;&#x52A0;&#x5165; babel-plugin-transform-proto-to-assign &#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x53EF;&#x4F9B;&#x53C2;&#x8003;&#x7684; <code>.babelrc</code> &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;presets&quot;</span>: [
+    [
+      <span class="hljs-string">&quot;es2015&quot;</span>,
+      {
+        <span class="hljs-string">&quot;loose&quot;</span>: <span class="hljs-literal">true</span>
+      }
+    ],
+    <span class="hljs-string">&quot;react&quot;</span>,
+    <span class="hljs-string">&quot;stage-1&quot;</span>
+  ],
+  <span class="hljs-string">&quot;plugins&quot;</span>: [
+    <span class="hljs-string">&quot;add-module-exports&quot;</span>,
+    <span class="hljs-string">&quot;transform-proto-to-assign&quot;</span>
+  ]
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;<a href="https://babeljs.io/docs/usage/caveats/#internet-explorer" target="_blank">&#x8FD9;&#x91CC;</a>&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; <a href="https://nowa-webpack.github.io" target="_blank">nowa-webpack</a>&#x4F5C;&#x4E3A;&#x9879;&#x76EE;&#x7684;&#x811A;&#x624B;&#x67B6;&#xFF0C;&#x8BF7;&#x5728; <code>abc.json</code> &#x4E2D;&#x7684; <code>options</code> &#x5904;&#x989D;&#x5916;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-js">{
+  options: {
+      <span class="hljs-string">&quot;lazyload&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;loose&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-comment">// ...</span>
+  }
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
 
                                 
                                 </section>
@@ -305,7 +338,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常见问题","level":"1.4","depth":1,"previous":{"title":"联系我们","level":"1.3","depth":1,"path":"connection.md","ref":"connection.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"question.md","mtime":"2017-08-10T09:47:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-10T11:32:54.819Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"常见问题","level":"1.4","depth":1,"previous":{"title":"联系我们","level":"1.3","depth":1,"path":"connection.md","ref":"connection.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"question.md","mtime":"2017-08-11T10:41:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-11T10:42:03.744Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
