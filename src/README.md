@@ -4,7 +4,7 @@
 
 _[![DingTalk](https://img.alicdn.com/tps/TB1Wk4nOXXXXXXTaXXXXXXXXXXX-13-16.png)](dingtalk://dingtalkclient/action/sendmsg?dingtalk_id=alidou)5分钟就能学会的 React 组件状态管理工具_
 
-[![npm version](https://img.shields.io/npm/v/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![download](https://img.shields.io/npm/dm/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/recore/refast) 
+[![npm version](https://img.shields.io/npm/v/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![download](https://img.shields.io/npm/dm/refast.svg?style=flat)](https://www.npmjs.com/package/refast) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/recore/refast) [![Refast](https://img.shields.io/github/stars/recore/refast.svg?style=social)](https://github.com/recore/refast) 
 
 ![npm install refast](https://nodei.co/npm/refast.png?downloadRank=true&downloads=true)
 
