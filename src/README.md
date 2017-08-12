@@ -26,7 +26,7 @@ https://unpkg.com/refast@[version]/dist/index.js
 
 ![Refast架构图](https://user-images.githubusercontent.com/7709602/27064069-df2fccb4-5027-11e7-967c-90791a1422c2.png)
 
-#### 几个概念
+#### 核心概念
 ##### Logic
 Logic 是一些修改组件状态的函数(称之为 Action )集合。正如下面的例子这样，根据实际业务场景的需要，拆分出多个修改 Action：
 ```javascript
