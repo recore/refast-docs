@@ -62,7 +62,7 @@ import { render } from 'react-dom';
 // 用以展示 empty 状态的 React 组件
 import Empty from 'your-custom-empty';
 // 用以展示 loading 状态的 React 组件
-import Loading from 'your-custom-empty';
+import Loading from 'your-custom-loading';
 
 // 自定义样式
 const cls = 'your-custom-className';
