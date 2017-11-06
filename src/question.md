@@ -51,3 +51,11 @@
 }
 ```
 
+
+#### 4、使用 nowa-webpack 作为脚手架的项目，初始化后会报错
+
+在 nowa 项目模板 template-uxcore 和 template-salt 的低版本中， package.json 的种 refast 的版本被指定为了 latest。所以会报错如下：
+
+![image](https://user-images.githubusercontent.com/7709602/32440622-f678d152-c32e-11e7-9ee3-97d259d1140c.png)
+
+如果出现了这个错误，请指定版本为 1.2.3。

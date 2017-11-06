@@ -67,8 +67,7 @@ Refast 对 React.Component 进行了一层封装。为其增加了 dispatch 等�
 更多内容可以看[这里](guide.md)。
 
 ##### LogicRender
-除了完成一般的 React 组件的状态管理，为了提高开发效率，Refast 还提供了一个称之为 LogicRender 的组件。它支持条件渲染，封装了 Loading/Empty 等常用的 UI 状态，还可以根据条件自己决定是否执行指定的 Action。
-
+除了完成一般的 React 组件的状态管理，为了提高开发效率，Refast 还提供了一个称之为 LogicRender 的组件。它支持条件渲染，封装了 Loading/Empty 等常用的 UI 状态，还可以根据条件自己决定是否执行指定的 Action。从 2.0.0 起， LogicRender 已经从 Refast 主库中移出，单独发布为 refast-logic-render。单独发布的 LogicRender 将会被重新设计和增强。
 
 更多内容可以看[这里](LogicRender.md)。
 
