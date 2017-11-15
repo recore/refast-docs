@@ -1,6 +1,6 @@
 # LogicRender
 
-正如[入门](guide.md)讲的那样，LogicRender 是一个配合 Refast 使用的逻辑组件。可以嵌套使用，可以根据条件执行特定的 Action。如果你是用的是 Refast 1.x，请移步[这里](https://github.com/recore/refast-docs/blob/1.x/src/LogicRender.md)，查看之前版本的文档。
+LogicRender 是一个配合 Refast 使用的逻辑组件。可以嵌套使用，可以根据条件执行特定的 Action。如果你是用的是 Refast 1.x，请移步[这里](https://github.com/recore/refast-docs/blob/1.x/src/LogicRender.md)，查看之前版本的文档。
 
 可以通过阅读下面的内容快速定位: 
 - [安装](#安装)
