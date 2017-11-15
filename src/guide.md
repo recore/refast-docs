@@ -1,9 +1,10 @@
 # 入门
+
 可以通过阅读下面的内容快速入门 Refast：
-- [联接 React 组件](#联接react组件)
-- [管理组件状态](#更新组件的state)
+- [联接 React 组件](#联接-React-组件)
+- [管理组件状态](#管理组件状态)
+- [中间件 Middleware](#中间件-middleware)
 - [LogicRender](#logicrender)
-- [中间件](#中间件)
 
 ## 联接 React 组件
 假定我们的目录结构如下：
@@ -16,7 +17,7 @@ demo  ----------------------- 某一个页面
   └── PageDemo.less  -------- css 样式
 ```
 
-那么可以将 PageDemo.jsx 和 logic.js 通过下面的方式联接起来:
+那么将 PageDemo.jsx 和 logic.js 联接起来，只需要很简单的一个操作:
 
 ```jsx
 // 使用 Refast 的 Component 替代 React 的 Component
@@ -34,7 +35,7 @@ class PageDemo extends Component {
 }
 ```
 
-如果想绑定多个 Logic ，可以通过下面的方式：
+当然也可以传入 Logic 数组，以绑定多个 Logic:
 
 ```jsx
 class PageDemo extends Component {
@@ -46,19 +47,9 @@ class PageDemo extends Component {
 }
 ```
 
-这样的话，我们就可以直接在 Logic 里面写 Action 操作了：
-
-```javascript
-
-export default update(ctx, someState) {
-  // ...
-  ctx.setState(someState);
-}
-```
-
 ## 管理组件状态
 
-当 Logic 与 组件联接后，就可以通过组件的 dispatch 方法直接调用 Logic 中的 Action 了。
+当 Logic 与组件联接后，即可通过 dispatch 方法调用 Logic 中的 Action 来修改组件的状态。
 
 ```javascript
 // logic.js
@@ -82,50 +73,18 @@ dispatch 调用 Action 时传入的参数，会依次放入到 ctx 后面。
 
 更多内容请阅读[这里](Logic.md)
 
+
+## 中间件 Middleware
+
+Refast 支持自定义一个中间件，在组件 setState 之前，进行数据比对、条件执行、打印日志等特定的操作。
+
+中间件的定制和用法请看[这里](Middleware.md)
+
 ## LogicRender
 
 LogicRender 是一个可以嵌套使用的逻辑组件，提供以下功能：
 
-#### 执行 Action
+- LogicRender 集成了通用视图处理逻辑，提升开发效率
+- LogicRender 可根据条件自动执行脚本，减少逻辑处理
 
-可以给 LogicRender 指定一个 Action，初始化时执行一次。如果设置了 awareOf，在组件更新时，一旦 awareOf 发生变化，就会再次执行 Action.
-
-```javascript
-import { render } from 'react-dom';
-const { workNo } = this.state;
-
-// 此处调用 Action，与直接调用 this.dispatch('update) 效果一致;
-render() {
-  return (
-    <LogicRender action={'update'} awareOf={{ workNo }}>
-    </LogicRender> 
-  )
-}
-```
-
-
-#### 通用UI的封装
-
-LogicRender 将常用的 Empty/Loadig UI 状态封装了起来。
-```javascript
-import { render } from 'react-dom';
-import { LogicRender } from 'refast';
-
-// 如果 isLoading 为 true,就展示 loading 状态
-// 如果 isEmpty 为 true，则展示 empty 状态
-render() {
-  const { isLoading, isEmpty } = this.state;
-  return (
-    <LogicRender loading={ isLoading } empty={ isEmpty }>
-    </LogicRender> 
-  )
-}
-```
 更多内容请看[这里](LogicRender.md)
-
-
-## 中间件
-
-支持自定义一个中间件，在组件 setState 之前，进行数据比对、条件执行、打印日志等特定的操作。
-
-中间件的写法和用法请看[这里](Middleware.md)

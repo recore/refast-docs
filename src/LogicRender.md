@@ -1,10 +1,64 @@
 # LogicRender
 
-LogicRender 是一个可以嵌套使用的逻辑组件，提供以下功能：
+正如[入门](guide.md)讲的那样，LogicRender 是一个配合 Refast 使用的逻辑组件。可以嵌套使用，可以根据条件执行特定的 Action。如果你是用的是 Refast 1.x，请移步[这里](https://github.com/recore/refast-docs/blob/1.x/src/LogicRender.md)，查看之前版本的文档。
 
-#### 条件渲染
+可以通过阅读下面的内容快速定位: 
+- [安装](#安装)
+- [初始化](#初始化)
+- [功能](#功能)
+  - [条件渲染](#条件渲染)
+  - [执行 Action](#执行-action)
+  - [通用 UI 的封装](#通用-ui-的封装)
+  - [自定义展示方式](#自定义展示方式)
+  - [修改默认的展示方式](#修改默认的展示方式)
 
-可以给 LogicRender 设置一个名为 show 的 props。 当它不为真时，LogicRender 就不会渲染其子组件。
+## 安装
+#### 通过 npm 安装
+Refast 可以通过 npm 安装到项目中： 
+`npm install refast-logic-render --save`
+
+#### 通过 CDN 引用
+
+Refast 可以通过 CDN 引入到项目中。
+* 每次均引入最新版本：
+https://unpkg.com/refast-logic-render/dist/index.js
+
+* 引入指定版本。用版本号替换 `[version]` 部分的内容即可：
+https://unpkg.com/refast-logic-render@[version]/dist/index.js
+
+## 初始化
+
+- 如果你使用了 Decorators
+
+```javascript
+import { Component } from 'refast';
+import LogicRender, { connect } from 'refast-logic-render';
+
+@connect
+class Foo extends Component {
+}
+
+export default Foo;
+```
+
+- 如果没有使用 Decorators
+
+```javascript
+import { Component } from 'refast';
+import LogicRender, { connect } from 'refast-logic-render';
+
+class Foo extends Component {
+}
+
+export default connect(Foo);
+```
+
+
+## 功能
+
+### 条件渲染
+
+可以给 LogicRender 设置一个名为 show 的 props。 当其为真时，LogicRender 才会渲染其子组件。
 
 ```javascript
 import { render } from 'react-dom';
@@ -17,10 +71,9 @@ render(){
 }
 ```
 
+### 执行 Action
 
-#### 执行 Action
-
-可以给 LogicRender 指定一个 Action，初始化时执行一次。如果设置了 awareOf，在当组件更新时，一旦 awareOf 发生变化，就会再次执行 Action。
+如果给 LogicRender 指定一个 Action。则在 LogicRender 在初始化(componentDidMount)后执行一次。如果又设置了 awareOf，则 awareOf 发生变化时再次执行 Action。
 
 ```javascript
 import { render } from 'react-dom';
@@ -36,7 +89,7 @@ render(){
 }
 ```
 
-#### 通用 UI 的封装
+### 通用 UI 的封装
 
 LogicRender 封装了常用的 Empty/Loadig 等 UI 状态。
 
@@ -49,12 +102,12 @@ import { LogicRender } from 'refast';
 render(){
   const { isLoading, isEmpty } = this.state;
   return (
-    <LogicRender loading={ isLoading } empty={ isEmpty }>
+    <LogicRender isLoading={ isLoading } isEmpty={ isEmpty }>
     </LogicRender> 
   )
 }
 ```
-#### 自定义通用 UI
+### 自定义展示方式
 Empty/Loadig 的展示可以通过修改 LogicRender 的 props 来修改:
 
 ```jsx
@@ -90,7 +143,7 @@ const Empty = (props) => (
 
 render(){
   return (
-    <LogicRender empty={ this.state.isEmpty } msg={ 'No Data' } Empty={ Empty }>
+    <LogicRender isEmpty={ this.state.isEmpty } msg={ 'No Data' } Empty={ Empty }>
     </LogicRender>
   )
 }
@@ -98,7 +151,7 @@ render(){
 
 当 isEmpty 为 true 时，就会展示 No Data。
 
-#### 修改默认的 UI
+### 修改默认的展示方式
 
 如果要统一修改 LogicRender 的默认展示方式，可以像下面的例子这样直接修改 LogicRender.defaultProps。
 

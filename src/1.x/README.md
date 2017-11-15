@@ -8,13 +8,6 @@ _[![DingTalk](https://img.alicdn.com/tps/TB1Wk4nOXXXXXXTaXXXXXXXXXXX-13-16.png)]
 
 ![npm install refast](https://nodei.co/npm/refast.png?downloadRank=true&downloads=true)
 
-此文档适用于 Refast 2.x。如果你使用的是 Refast 1.x，请[移步这里](https://github.com/recore/refast-docs/blob/1.x/src/guide.md)，查看之前版本的文档。
-
-## 优势
-
-- 概念少，学习成本低，5 分钟上手精通。
-- 异步操作更加流畅，官方推荐的 [async-await](https://github.com/tc39/proposals/blob/master/finished-proposals.md)，已经在 Chrome v55 和 Firefox 52.0 提供支持
-
 ## 安装使用
 #### 通过 npm 安装
 Refast 可以通过 npm 安装到项目中： 
@@ -43,8 +36,8 @@ export function update(context, someState) {
 }
 
 // 异步请求后修改组件状态
-export async function init(context, params){
-  const asyncState = await window.fetch(params);
+export async function init(context, ...params){
+  const asyncState = await window.fetch.apply(null, params);
   context.setState(asyncState);
 }
 ```
@@ -72,6 +65,18 @@ export default class PageDemo extends Component {
 Refast 对 React.Component 进行了一层封装。为其增加了 dispatch 等几个方法。可以通过在组件中使用 `this.dispatch` 调用 Logic 中的 Action 函数。
 
 更多内容可以看[这里](guide.md)。
+
+##### LogicRender
+除了完成一般的 React 组件的状态管理，为了提高开发效率，Refast 还提供了一个称之为 LogicRender 的组件。它支持条件渲染，封装了 Loading/Empty 等常用的 UI 状态，还可以根据条件自己决定是否执行指定的 Action。从 2.0.0 起， LogicRender 已经从 Refast 主库中移出，单独发布为 refast-logic-render。单独发布的 LogicRender 将会被重新设计和增强。
+
+更多内容可以看[这里](LogicRender.md)。
+
+## 优势
+
+- 概念少，学习成本较低。
+- 异步操作更加流畅，官方推荐的 [async-await](https://github.com/tc39/proposals/blob/master/finished-proposals.md)，已经在 Chrome v55 和 Firefox 52.0 提供支持
+- LogicRender 集成了通用视图处理逻辑，提升开发效率
+- LogicRender 可根据条件自动执行脚本，减少逻辑处理
 
 ## 示例
 
