@@ -19,9 +19,8 @@ const logState = ctx => next => (...args) => {
   next(...args);
 };
 
-// logState 可以是一个函数
-// 也可以是一个函数组, 从前到后依次执行
-Refast.use('middleware', logState);
+// logState 是一个函数组, 从前到后依次执行
+Refast.use('middleware', [logState]);
 ``` 
 ![image](https://user-images.githubusercontent.com/7709602/27062879-cd5320a6-5020-11e7-86e2-65e36fc3c602.png)
 

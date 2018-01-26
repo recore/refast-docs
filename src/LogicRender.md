@@ -58,14 +58,14 @@ export default connect(Foo);
 
 ### 条件渲染
 
-可以给 LogicRender 设置一个名为 show 的 props。 当其为真时，LogicRender 才会渲染其子组件。
+可以给 LogicRender 设置一个名为 isShow 的 props。 当其为真时，LogicRender 才会渲染其子组件。
 
 ```javascript
 import { render } from 'react-dom';
 
 render(){
   return (
-    <LogicRender show={ this.state.show }>
+    <LogicRender isShow={ this.state.show }>
     </LogicRender> 
   )
 }
