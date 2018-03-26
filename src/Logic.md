@@ -105,8 +105,8 @@ export default {
 // logic.js
 export default {
   // ...
-  await search(ctx, data) {
-    let state =  await DB.User.search(data).catch(() => {
+  async search(ctx, data) {
+    let state = await DB.User.search(data).catch(() => {
        // 这里处理异常信息
     });
     // ...
